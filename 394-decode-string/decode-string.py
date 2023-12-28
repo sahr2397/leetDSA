@@ -1,30 +1,24 @@
 class Solution:
-    def push(self,es: str, c:str):
-        return [c]+es
     def decodeString(self, s: str) -> str:
-        
-        stack=[]
-        for c in s:
-
-            if c=="]":
-                es=[]
-                while stack[-1]!="[":
-                   es = self.push(es,stack.pop())
-                
+        stack = list()
+        for char in s:
+            if char == ']':
+                text = list()
+                while stack[-1] != '[':
+                    text.append(stack.pop())
+                text.reverse()
                 stack.pop()
-                k=[]
-                while stack and stack[-1].isdigit():
-                    k=self.push(k,stack.pop())
                 
-                k=int("".join(k))
-                es=es*k
-                es="".join(es)
-                stack.append(es)
-
+                number = 0
+                i = 0
+                while stack and stack[-1].isdigit():
+                    number += int(stack[-1]) * pow(10,i)
+                    stack.pop()
+                    i += 1
+                
+                finalText = ''.join(text) * number
+                stack.append(finalText)
             else:
-                stack.append(c)
-
-        return "".join(stack)
-
-
+                stack.append(char)
+        return ''.join(stack)
         
