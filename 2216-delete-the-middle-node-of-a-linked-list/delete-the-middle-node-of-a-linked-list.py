@@ -4,27 +4,16 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def get_len(self, head: Optional[ListNode]) -> int:
-        cur = head
-        n=0
-        while(cur!=None):
-            n+=1
-            cur=cur.next
-        return n
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head.next==None: return None
+        slow,fast=head,head
+        prev=None
 
-        n=self.get_len(head)
-        if n==1: return None
+        while(fast!=None and fast.next!=None):
+            prev=slow
+            slow=slow.next
+            fast=fast.next.next
 
-        mid=n//2
-        print(n,mid)
-        cur = head
-        i=0
-        while(i<mid-1):
-            cur=cur.next
-            i+=1
-        
-        cur.next=cur.next.next
-    
+        prev.next=prev.next.next
+
         return head
-        
