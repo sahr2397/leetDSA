@@ -11,7 +11,7 @@ class Solution:
             while(scanner<n and num==nums[scanner]):
                 scanner+=1
             
-            print(num,scanner,i)
+            # print(num,scanner,i)
 
             if scanner<n:
                 nums[i]=nums[scanner]
