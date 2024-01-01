@@ -18,7 +18,6 @@ class Solution:
 
 
     def pairSum(self, head: Optional[ListNode]) -> int:
-        if head.next.next==None: return (head.val+head.next.val)
 
         slow,fast=head,head.next
         
