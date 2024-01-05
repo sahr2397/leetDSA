@@ -18,10 +18,10 @@ class Solution:
             
             end=start+2
         
-        if start+2==len(flowerbed):
+        if start+2==lfb:
             win = flowerbed[start:]
             if sum(win)==0: res+=1
-        elif len(flowerbed)>1 and flowerbed[end-4]!=0:
+        elif lfb>1 and flowerbed[end-4]!=0:
             win= flowerbed[end-3:]
             if sum(win)==0: res+=1
 
