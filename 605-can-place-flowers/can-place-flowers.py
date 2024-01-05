@@ -1,30 +1,30 @@
 class Solution:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
-        '''
-        [0,0,0,1,0,0,1,0,0]end
-        [1,0,1,0,1,1,1,0,1,0,1,0]
-        '''
+        start=0
+        end=1
+        res=0
         
-        start, end = 0, 1
-        result = 0
-        if len(flowerbed)==1 and flowerbed[0]==0: result=1
+        if len(flowerbed)==1 and flowerbed[0]==0: res=1
 
-        while end < len(flowerbed):
-            window = flowerbed[start:end+1]
-            if sum(window) == 0: 
-                result += 1
-                start=end
-            else: start+=1
-            end = start + 2
+        while(end<len(flowerbed)):
 
-       
-        if (start+2==len(flowerbed)):
-            window = flowerbed[start:]
-            if sum(window) == 0: result += 1
-        elif len(flowerbed)>1 and flowerbed[end-4]!=0:
-            window = flowerbed[end-3:]
-            if sum(window) == 0: result += 1
-        
-        return result >= n
+            win= flowerbed[start:end+1]
             
+            if sum(win)==0: 
+                res+=1
+                start=end
+            else:
+                start+=1
+            
+            end=start+2
         
+        if start+2==len(flowerbed):
+            win = flowerbed[start:]
+            if sum(win)==0: res+=1
+        elif len(flowerbed)>1 and flowerbed[end-4]!=0:
+            win= flowerbed[end-3:]
+            if sum(win)==0: res+=1
+
+        return res>=n
+
+
