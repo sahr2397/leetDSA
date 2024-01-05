@@ -1,15 +1,15 @@
 class Solution:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
-        start=0
-        end=1
+        start,end=0,1
         res=0
+        lfb=len(flowerbed)
         
-        if len(flowerbed)==1 and flowerbed[0]==0: res=1
+        if lfb==1 and flowerbed[0]==0: res=1
 
-        while(end<len(flowerbed)):
+        while(end<lfb):
 
             win= flowerbed[start:end+1]
-            
+
             if sum(win)==0: 
                 res+=1
                 start=end
