@@ -11,10 +11,7 @@ class Solution:
 
         while end < len(flowerbed):
             
-            if start == 0:
-                window = flowerbed[start:end+1]
-            else:
-                window = flowerbed[start:end+1]
+            window = flowerbed[start:end+1]
             
             print(window)
             if sum(window) == 0: 
@@ -24,9 +21,7 @@ class Solution:
                 
             end = start + 2
 
-            
-            
-        print(start,end)
+       
         if (start+2==len(flowerbed)):
             window = flowerbed[start:]
             print(window)
