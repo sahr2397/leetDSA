@@ -7,6 +7,7 @@ class Solution:
         if lfb==1 and flowerbed[0]==0: return True
 
         while(end<lfb):
+            if res==n: return True
             win= flowerbed[start:end+1]
             if sum(win)==0: 
                 res+=1
