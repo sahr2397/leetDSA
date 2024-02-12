@@ -21,7 +21,7 @@ class Solution:
             res+=dfs(node.right,cSum,tSum,pDict)
 
             pDict[cSum]-=1
-            # cSum-=node.val
+            cSum-=node.val
             return res
             
         pDict=defaultdict(int)
