@@ -13,7 +13,7 @@ class Solution:
 
         for num in nums[1:]:
             a,b=interval
-            if num in range(a,b+1):
+            if num==b:
                 interval[1]+=1
             else :
                 interval[1]-=1
